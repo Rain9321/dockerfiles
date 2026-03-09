@@ -1,3 +1,6 @@
 ARG version 
 FROM almalinux:${version:-8}
-RUN echo "version passed by the user is : ${version}"
+# ARG variable before FROM will not work after FROM
+ARG COURSE
+ARG TRAINER
+RUN echo "Course is: ${COURSE}, trainer is: ${TRAINER} "
